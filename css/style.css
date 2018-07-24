@@ -1,9 +1,3 @@
-@import url(fonts/open-sans/open-sans.css);
-@import url(fonts/source-sans-pro/source-sans-pro.css);
-@import url(fonts/titillium-web/titillium-web.css);
-.roboto {
-  font-family: 'Roboto Condensed', sans-serif;
-}
 .threeDots {
   overflow: hidden;
   text-overflow: ellipsis;
@@ -131,7 +125,6 @@
   }
 }
 * {
-  font-family: 'Roboto Condensed', sans-serif;
   box-sizing: border-box;
   -moz-box-sizing: border-box;
   -webkit-box-sizing: border-box;
@@ -141,6 +134,7 @@
 }
 html {
   height: 100%;
+  font-family: Tahoma;
 }
 body {
   height: 100%;
@@ -320,7 +314,6 @@ body.win {
   padding-left: 30px;
   padding-top: 3px;
   background-color: rgba(255, 255, 255, 0.5);
-  font-family: 'Roboto Condensed', sans-serif;
 }
 .playerFigures::before,
 .playerFigures::after {
@@ -462,39 +455,6 @@ body.win {
   height: 70px;
   background-color: #676767;
 }
-.infoArea * {
-  font-family: 'Roboto Condensed', sans-serif;
-}
-.infoArea .infoMsg {
-  display: inline-block;
-  position: absolute;
-  right: 0;
-  top: 0;
-  max-width: 0;
-  height: 70px;
-  overflow: hidden;
-  -moz-transition: all 300ms ease;
-  -webkit-transition: all 300ms ease;
-  transition: all 300ms ease;
-}
-.infoArea .infoMsg::before,
-.infoArea .infoMsg::after {
-  content: '';
-  display: table;
-  clear: both;
-}
-.infoArea .infoMsg.show {
-  padding: 0 20px;
-  max-width: 100%;
-  background-color: rgba(255, 255, 255, 0.5);
-}
-.infoArea .infoMsg .msg {
-  width: 100%;
-  line-height: 70px;
-  font-size: 20px;
-  color: #ffffff;
-  text-align: center;
-}
 .infoArea .actionBtn {
   display: inline-block;
   width: 130px;
@@ -504,4 +464,30 @@ body.win {
   color: #ffffff;
   padding: 0 10px;
   cursor: pointer;
+}
+.infoMsg {
+  -moz-transition: all 300ms ease;
+  -webkit-transition: all 300ms ease;
+  transition: all 300ms ease;
+  background-color: #840400;
+  bottom: 0;
+  color: #ffffff;
+  display: none;
+  font-size: 14px;
+  letter-spacing: 1.5px;
+  line-height: 40px;
+  overflow: hidden;
+  position: fixed;
+  right: 0;
+  text-align: center;
+  width: 100%;
+}
+.infoMsg::before,
+.infoMsg::after {
+  content: '';
+  display: table;
+  clear: both;
+}
+.infoMsg.show {
+  display: block;
 }

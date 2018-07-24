@@ -1,13 +1,3 @@
-@import url(fonts/open-sans/open-sans.css);
-@import url(fonts/source-sans-pro/source-sans-pro.css);
-@import url(fonts/titillium-web/titillium-web.css);
-
-
-
-.roboto{
-		font-family: 'Roboto Condensed', sans-serif;
-
-}
 .radius (@size:50px){
 	border-radius: @size;
 	-moz-border-radius: @size;
@@ -129,12 +119,7 @@
   100% {transform: scale(1); background-color: rgba(255,255,255, 0.2);}
 }
 
-
-
-
-
 *{
-	.roboto;
 	.boxsizing;
 }
 .clear{
@@ -145,6 +130,7 @@
 
 html{
 	height: 100%;
+	font-family: Tahoma;
 }
 body{
 	height: 100%;
@@ -315,7 +301,6 @@ body{
 	padding-left: 30px;
 	padding-top: 3px;
 	background-color: rgba(255, 255, 255, 0.5);
-	.roboto;
 	.beforeafter;
 	&:nth-child(n+2){
 		border-left: 2px solid #323232;
@@ -464,32 +449,7 @@ body{
 	width: 100%;
 	height: 70px;
 	background-color: #676767;
-	*{
-		.roboto;
-	}
-	.infoMsg{
-		display: inline-block;
-		position: absolute;
-		right: 0;
-		top: 0;
-		max-width: 0;
-		height: 70px;
-		overflow: hidden;
-		.beforeafter;
-		.transition;
-		&.show{
-			padding: 0 20px;
-			max-width: 100%;
-			background-color: rgba(255, 255, 255, 0.5);
-		}
-		.msg{
-			width: 100%;
-			line-height: 70px;
-			font-size: 20px;
-			color: #ffffff;
-			text-align: center;
-		}
-	}
+
 	.actionBtn{
 		display: inline-block;
 		width: 130px;
@@ -500,5 +460,26 @@ body{
 		padding: 0 10px;
 		cursor: pointer;
 	}
+}
 
+.infoMsg{
+	.beforeafter;
+	.transition;
+
+	background-color: #840400;
+	bottom: 0;
+	color: #ffffff;
+	display: none;
+	font-size: 14px;
+	letter-spacing: 1.5px;
+	line-height: 40px;
+	overflow: hidden;
+	position: fixed;
+	right: 0;
+	text-align: center;
+	width: 100%;
+
+	&.show{
+		display: block;
+	}
 }
