@@ -6,9 +6,15 @@ export class StartBtn extends React.Component {
 	}
 
 	clicked(event) {
-		if (this.props.settings.playersCount == 0) {
-			this.props.updateMessage('musisz wybrać przynajmniej 2 graczy');
+		if (this.props.settings.playersCount < 2) {
+			this.props.updateMessage('musisz wybrać przynajmniej 2 graczy', true);
+
+			return;
 		}
+
+		this.props.updateMessage('', false);
+
+		this.props.startGame();
 	}
 
 	render() {

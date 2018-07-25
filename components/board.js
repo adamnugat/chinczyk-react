@@ -3,12 +3,21 @@ import React from 'react';
 export class Board extends React.Component {
 	constructor() {
 		super();
-
 	}
 
 	clicked(event) {
-		console.log(event.target.dataset.color);
-		// console.log(event.target.attributes.getNamedItem('start-color').value);
+		const playersFields = ['blue', 'red', 'green', 'yellow'],
+			target = event.target.dataset.color;
+
+		if (playersFields.indexOf(target) === -1) {
+			return false;
+		}
+
+		this.clickedChoosePlayer(target);
+	}
+
+	clickedChoosePlayer(player) {
+		this.props.addPlayer(player);
 	}
 
 	render() {
