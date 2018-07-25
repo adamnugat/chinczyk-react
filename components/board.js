@@ -7,7 +7,8 @@ export class Board extends React.Component {
 	}
 
 	clicked(event) {
-		console.log(event.target);
+		console.log(event.target.dataset.color);
+		// console.log(event.target.attributes.getNamedItem('start-color').value);
 	}
 
 	render() {
@@ -19,7 +20,7 @@ export class Board extends React.Component {
 				<div></div>
 				<div className="field" field-number="9"></div>
 				<div className="field" field-number="10"></div>
-				<div className="field" field-number="11" start-color="blue"></div>
+				<div className="field" field-number="11" data-color="blue"></div>
 				<div></div>
 				<div></div>
 				<div></div>
@@ -57,7 +58,7 @@ export class Board extends React.Component {
 				<div></div>
 				<div></div>
 				<div></div>
-				<div className="field" field-number="1" start-color="red"></div>
+				<div className="field" field-number="1" data-color="red"></div>
 				<div className="field" field-number="2"></div>
 				<div className="field" field-number="3"></div>
 				<div className="field" field-number="4"></div>
@@ -91,7 +92,7 @@ export class Board extends React.Component {
 				<div className="field" field-number="24"></div>
 				<div className="field" field-number="23"></div>
 				<div className="field" field-number="22"></div>
-				<div className="field" field-number="21" start-color="green"></div>
+				<div className="field" field-number="21" data-color="green"></div>
 				<div></div>
 				<div></div>
 				<div></div>
@@ -129,7 +130,7 @@ export class Board extends React.Component {
 				<div></div>
 				<div></div>
 				<div></div>
-				<div className="field" field-number="31" start-color="yellow"></div>
+				<div className="field" field-number="31" data-color="yellow"></div>
 				<div className="field" field-number="30"></div>
 				<div className="field" field-number="29"></div>
 				<div></div>

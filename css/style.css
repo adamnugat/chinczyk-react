@@ -1,16 +1,6 @@
-.threeDots {
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-}
-.boxsizing {
-  box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  -webkit-box-sizing: border-box;
-}
 .background {
-  background-repeat: no-repeat;
   background-position: center;
+  background-repeat: no-repeat;
   background-size: contain;
 }
 .transition {
@@ -20,8 +10,11 @@
 }
 .beforeafter::before,
 .beforeafter::after {
+  clear: both;
   content: '';
   display: table;
+}
+.clear {
   clear: both;
 }
 @-webkit-keyframes changecollors {
@@ -129,20 +122,17 @@
   -moz-box-sizing: border-box;
   -webkit-box-sizing: border-box;
 }
-.clear {
-  clear: both;
-}
 html {
   height: 100%;
   font-family: Tahoma;
 }
 body {
-  height: 100%;
-  background-color: #79838c;
-  overflow: hidden;
   -moz-transition: all 1000ms ease;
   -webkit-transition: all 1000ms ease;
   transition: all 1000ms ease;
+  background-color: #79838c;
+  height: 100%;
+  overflow: hidden;
 }
 body.black {
   background-color: #000000;
@@ -151,19 +141,19 @@ body.win {
   background-color: #545125;
 }
 .fieldsArea {
+  height: calc((50px + 3px) * 11);
   margin: 120px auto 0 auto;
   width: calc((50px + 3px) * 11);
-  height: calc((50px + 3px) * 11);
 }
 .fieldsArea > div {
-  width: 50px;
-  height: 50px;
-  float: left;
-  margin-right: 3px;
-  margin-bottom: 3px;
   border-radius: 50px;
   -moz-border-radius: 50px;
   -webkit-border-radius: 50px;
+  float: left;
+  height: 50px;
+  margin-bottom: 3px;
+  margin-right: 3px;
+  width: 50px;
 }
 .fieldsArea > div.field {
   position: relative;
@@ -179,58 +169,61 @@ body.win {
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#cecece', endColorstr='#ffffff', GradientType=1);
   /* IE6-9 fallback on horizontal gradient */
 }
-.fieldsArea > div.field[start-color="red"],
+.fieldsArea > div.field[data-color="red"],
 .fieldsArea > div.field[home="red"] {
   background: red;
 }
-.fieldsArea > div.field[start-color="blue"],
+.fieldsArea > div.field[data-color="blue"],
 .fieldsArea > div.field[home="blue"] {
   background: blue;
 }
-.fieldsArea > div.field[start-color="green"],
+.fieldsArea > div.field[data-color="green"],
 .fieldsArea > div.field[home="green"] {
   background: green;
 }
-.fieldsArea > div.field[start-color="yellow"],
+.fieldsArea > div.field[data-color="yellow"],
 .fieldsArea > div.field[home="yellow"] {
   background: yellow;
 }
 .fieldsArea > div.field .virtualShadow {
-  width: 10px;
-  height: 10px;
-  background-color: #323232;
-  position: absolute;
-  top: 20px;
-  left: 20px;
-  z-index: 2;
   border-radius: 10px;
   -moz-border-radius: 10px;
   -webkit-border-radius: 10px;
+  background-color: #323232;
+  height: 10px;
+  left: 20px;
+  position: absolute;
+  top: 20px;
+  width: 10px;
+  z-index: 2;
 }
 .fieldsArea > div.field .virtualShadow.attack {
-  width: 30px;
-  height: 30px;
-  top: 10px;
-  left: 10px;
   background-color: transparent;
-  background-size: contain;
-  background-position: center;
   background-image: url(../images/attack.png);
+  background-position: center;
+  background-size: contain;
+  height: 30px;
+  left: 10px;
+  top: 10px;
+  width: 30px;
 }
 .fieldsArea > div.dice {
-  position: relative;
-  z-index: 2;
   background-color: #000000;
   background-image: url(../images/dice.png);
   background-position: center;
   background-size: 114%;
   cursor: pointer;
   opacity: 0;
+  position: relative;
+  z-index: 2;
 }
 .fieldsArea > div.dice.show {
   opacity: 1;
 }
 .fieldsArea > div.dice.animation {
+  -moz-transition: all 300ms ease;
+  -webkit-transition: all 300ms ease;
+  transition: all 300ms ease;
   transform: scale(1.5);
   -webkit-animation: changecollors 2s infinite;
   /* Safari 4+ */
@@ -240,16 +233,13 @@ body.win {
   /* Opera 12+ */
   animation: changecollors 2s infinite;
   /* IE 10+, Fx 29+ */
-  -moz-transition: all 300ms ease;
-  -webkit-transition: all 300ms ease;
-  transition: all 300ms ease;
 }
 .fieldsArea > div.dice .result {
-  width: 100%;
-  height: 100%;
-  background-repeat: no-repeat;
   background-position: center;
+  background-repeat: no-repeat;
   background-size: contain;
+  height: 100%;
+  width: 100%;
 }
 .fieldsArea > div.dice .result[dice-result="1"] {
   background-image: url(../images/dice/dice1.png);
@@ -270,70 +260,70 @@ body.win {
   background-image: url(../images/dice/dice6.png);
 }
 .figuresContainer {
-  position: absolute;
-  width: calc(100% - 200px);
   left: 130px;
+  position: absolute;
   top: 0;
+  width: calc(100% - 200px);
 }
 .figuresContainer .close {
-  position: absolute;
-  right: 7px;
-  bottom: 5px;
-  width: 20px;
-  height: 20px;
-  line-height: 18px;
-  text-align: center;
-  color: #ffffff;
-  background-color: #000000;
-  cursor: pointer;
-  font-family: FontAwesome;
   border-radius: 20px;
   -moz-border-radius: 20px;
   -webkit-border-radius: 20px;
+  background-color: #000000;
+  bottom: 5px;
+  color: #ffffff;
+  cursor: pointer;
+  font-family: FontAwesome;
+  height: 20px;
+  line-height: 18px;
+  position: absolute;
+  right: 7px;
+  text-align: center;
+  width: 20px;
 }
 .figuresContainer .this {
+  background-color: green;
+  color: #ffffff;
+  cursor: pointer;
   display: none;
-  position: absolute;
-  right: 0;
-  top: 0;
-  width: 30px;
+  font-family: FontAwesome;
   height: 30px;
   line-height: 28px;
+  position: absolute;
+  right: 0;
   text-align: center;
-  color: #ffffff;
-  font-family: FontAwesome;
-  background-color: green;
-  cursor: pointer;
+  top: 0;
+  width: 30px;
 }
 .playerFigures {
-  position: relative;
-  width: 100px;
-  height: 104px;
+  background-color: rgba(255, 255, 255, 0.5);
   display: inline-block;
+  height: 104px;
   padding-bottom: 35px;
   padding-left: 30px;
   padding-top: 3px;
-  background-color: rgba(255, 255, 255, 0.5);
+  position: relative;
+  width: 100px;
 }
 .playerFigures::before,
 .playerFigures::after {
+  clear: both;
   content: '';
   display: table;
-  clear: both;
 }
 .playerFigures:nth-child(n+2) {
   border-left: 2px solid #323232;
 }
 .playerFigures[order]:before {
-  position: absolute;
-  left: 9px;
-  top: 0;
-  font-size: 26px;
-  text-shadow: 1px 1px #000000;
   color: #ffffff;
-  line-height: 60px;
+  font-size: 26px;
   font-weight: bold;
+  left: 9px;
+  line-height: 60px;
   padding-top: 5px;
+  position: absolute;
+  text-shadow: 1px 1px #000000;
+  top: 0;
 }
 .playerFigures[order="1"]:before {
   content: '1';
@@ -348,29 +338,29 @@ body.win {
   content: '4';
 }
 .playerFigures.red.scale {
-  border-bottom: 10px solid #dd0000;
   background-color: #ff5e5e;
+  border-bottom: 10px solid #dd0000;
 }
 .playerFigures.red .figure {
   background-image: url(../images/figure_red.png);
 }
 .playerFigures.blue.scale {
-  border-bottom: 10px solid #0000db;
   background-color: #5c5cff;
+  border-bottom: 10px solid #0000db;
 }
 .playerFigures.blue .figure {
   background-image: url(../images/figure_blue.png);
 }
 .playerFigures.green.scale {
-  border-bottom: 10px solid #016401;
   background-color: #02e202;
+  border-bottom: 10px solid #016401;
 }
 .playerFigures.green .figure {
   background-image: url(../images/figure_green.png);
 }
 .playerFigures.yellow.scale {
-  border-bottom: 10px solid #dbdb00;
   background-color: #ffff5c;
+  border-bottom: 10px solid #dbdb00;
 }
 .playerFigures.yellow .figure {
   background-image: url(../images/figure_yellow.png);
@@ -381,33 +371,33 @@ body.win {
   transition: all 300ms ease;
 }
 .playerFigures > div {
-  width: 30px;
-  height: 30px;
-  float: left;
-  margin-right: 3px;
-  margin-bottom: 3px;
-  cursor: pointer;
   border-radius: 30px;
   -moz-border-radius: 30px;
   -webkit-border-radius: 30px;
-  background-repeat: no-repeat;
   background-position: center;
+  background-repeat: no-repeat;
   background-size: contain;
+  cursor: pointer;
+  float: left;
+  height: 30px;
+  margin-bottom: 3px;
+  margin-right: 3px;
+  width: 30px;
 }
 .field .figure {
-  width: 40px;
-  height: 40px;
-  position: relative;
-  left: 5px;
-  top: 5px;
-  z-index: 1;
-  cursor: pointer;
   border-radius: 20px;
   -moz-border-radius: 20px;
   -webkit-border-radius: 20px;
-  background-repeat: no-repeat;
   background-position: center;
+  background-repeat: no-repeat;
   background-size: contain;
+  cursor: pointer;
+  height: 40px;
+  left: 5px;
+  position: relative;
+  top: 5px;
+  width: 40px;
+  z-index: 1;
 }
 .field .figure[player="red"] {
   background-image: url(../images/figure_red.png);
@@ -422,6 +412,9 @@ body.win {
   background-image: url(../images/figure_yellow.png);
 }
 .field .figure.animation {
+  -moz-transition: all 300ms ease;
+  -webkit-transition: all 300ms ease;
+  transition: all 300ms ease;
   -webkit-animation: changescale 1s infinite;
   /* Safari 4+ */
   -moz-animation: changescale 1s infinite;
@@ -430,11 +423,11 @@ body.win {
   /* Opera 12+ */
   animation: changescale 1s infinite;
   /* IE 10+, Fx 29+ */
-  -moz-transition: all 300ms ease;
-  -webkit-transition: all 300ms ease;
-  transition: all 300ms ease;
 }
 .figure.animation {
+  -moz-transition: all 300ms ease;
+  -webkit-transition: all 300ms ease;
+  transition: all 300ms ease;
   -webkit-animation: changescale 1s infinite;
   /* Safari 4+ */
   -moz-animation: changescale 1s infinite;
@@ -443,27 +436,24 @@ body.win {
   /* Opera 12+ */
   animation: changescale 1s infinite;
   /* IE 10+, Fx 29+ */
-  -moz-transition: all 300ms ease;
-  -webkit-transition: all 300ms ease;
-  transition: all 300ms ease;
 }
 .infoArea {
+  background-color: #676767;
+  height: 70px;
+  left: 0;
   position: fixed;
   top: 0;
-  left: 0;
   width: 100%;
-  height: 70px;
-  background-color: #676767;
 }
 .infoArea .actionBtn {
-  display: inline-block;
-  width: 130px;
-  line-height: 70px;
-  text-align: center;
   background-color: #336699;
   color: #ffffff;
-  padding: 0 10px;
   cursor: pointer;
+  display: inline-block;
+  line-height: 70px;
+  padding: 0 10px;
+  text-align: center;
+  width: 130px;
 }
 .infoMsg {
   -moz-transition: all 300ms ease;
@@ -484,9 +474,9 @@ body.win {
 }
 .infoMsg::before,
 .infoMsg::after {
+  clear: both;
   content: '';
   display: table;
-  clear: both;
 }
 .infoMsg.show {
   display: block;
