@@ -3,10 +3,12 @@ import React from 'react';
 import { connect } from 'react-redux'
 
 import { startGame } from '../actions/gameActions'
+import { setMessage } from '../actions/messageActions'
 
 @connect((store) => {
 	return {
-		game: store.game.game
+		game: store.game.game,
+		message: store.message.message
 	}
 })
 
@@ -17,12 +19,11 @@ export class StartBtn extends React.Component {
 
 	clicked(event) {
 		if (this.props.settings.playersCount < 2) {
-			this.props.updateMessage('musisz wybrać przynajmniej 2 graczy', true);
+			this.props.dispatch(setMessage('musisz wybrać przynajmniej 2 graczy'));
 
 			return;
 		}
-
-		this.props.updateMessage('', false);
+		this.props.dispatch(setMessage(''));
 
 		this.props.dispatch(startGame());
 	}

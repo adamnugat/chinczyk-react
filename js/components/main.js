@@ -9,11 +9,6 @@ export class Chinczyk extends React.Component {
 		super();
 
 		this.state = {
-			gameStarted: false,
-			msg: {
-				error: '',
-				show: false
-			},
 			players: []
 		};
 
@@ -22,42 +17,18 @@ export class Chinczyk extends React.Component {
 		}
 	}
 
-	updateMessage(error, show) {
-		this.setState({msg: {error: error, show: true}});
-	}
-
-	addPlayer(player) {
-		if (this.state.players.indexOf(player) > -1) {
-			return false;
-		}
-
-		this.settings.playersCount++;
-
-		this.setState({players: [...this.state.players, player]});
-	}
-
-	removePlayer(player) {
-		const playerId = this.state.players.indexOf(player);
-
-		this.settings.playersCount--;
-
-		this.setState((prevState) => ({
-			players: [...prevState.players.slice(0,playerId), ...prevState.players.slice(playerId+1)]
-		}))
-	}
-
 	render() {
 		return (
 			<div>
 				<div className="infoArea">
-					<StartBtn settings={this.settings} updateMessage={this.updateMessage.bind(this)} />
+					<StartBtn settings={this.settings} />
 
-					<PlayersArea players={this.state.players} removePlayer={this.removePlayer.bind(this)} />
+					<PlayersArea />
 				</div>
 
-				<Board addPlayer={this.addPlayer.bind(this)} />
+				<Board />
 
-				<MsgBar {...this.state.msg} /> {/* tożsame : <MsgBar {error={this.state.msg.error} show={this.state.msg.show}} /> */}
+				<MsgBar {...this.props.message} /> {/* tożsame : <MsgBar {error={this.state.msg.error} show={this.state.msg.show}} /> */}
 			</div>
 		)
 	}

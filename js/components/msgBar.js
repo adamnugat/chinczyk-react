@@ -1,13 +1,22 @@
 import React from 'react';
 
+import { connect } from 'react-redux'
+
+import { setMessage } from '../actions/messageActions'
+
+@connect((store) => {
+	return {
+		message: store.message.message
+	}
+})
+
 export class MsgBar extends React.Component {
 	constructor() {
 		super();
-
 	}
 
 	displayOrNot() {
-		if (this.props.show) {
+		if (this.props.message.show) {
 			return {display: 'block'};
 		}
 
@@ -16,7 +25,7 @@ export class MsgBar extends React.Component {
 
 	render() {
 		return (
-			<div className={this.props.classNames} style={this.displayOrNot()}>{this.props.error}</div>
+			<div className={this.props.classNames} style={this.displayOrNot()}>{this.props.message.text}</div>
 		)
 	}
 }

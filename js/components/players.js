@@ -1,5 +1,16 @@
 import React from 'react';
 
+import { connect } from 'react-redux'
+
+import { removePlayer } from '../actions/playerActions'
+
+@connect((store) => {
+	return {
+		players: store.player.players,
+		countPlayers: store.player.countPlayers
+	}
+})
+
 export class PlayersArea extends React.Component {
 	constructor() {
 		super();
@@ -14,7 +25,11 @@ export class PlayersArea extends React.Component {
 	}
 
 	clickedRemovePlayer(player) {
-		this.props.removePlayer(player);
+		const playerId = this.props.players.indexOf(player);
+
+		let newPlayers = [...this.props.players.slice(0,playerId), ...this.props.players.slice(playerId+1)];
+
+		this.props.dispatch(removePlayer(newPlayers));
 	}
 
 	renderPlayers(players) {

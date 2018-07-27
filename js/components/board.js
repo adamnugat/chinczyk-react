@@ -1,5 +1,16 @@
 import React from 'react';
 
+import { connect } from 'react-redux'
+
+import { addPlayer } from '../actions/playerActions'
+
+@connect((store) => {
+	return {
+		players: store.player.players,
+		countPlayers: store.player.countPlayers
+	}
+})
+
 export class Board extends React.Component {
 	constructor() {
 		super();
@@ -13,14 +24,22 @@ export class Board extends React.Component {
 			return false;
 		}
 
-		this.clickedChoosePlayer(target);
+		this.clickedAddPlayer(target);
 	}
 
-	clickedChoosePlayer(player) {
-		this.props.addPlayer(player);
+	clickedAddPlayer(player) {
+		if (this.props.players.indexOf(player) > -1) {
+			return false;
+		}
+
+		let newPlayers = [...this.props.players, player];
+
+		this.props.dispatch(addPlayer(newPlayers));
 	}
 
 	render() {
+		console.log(this.props);
+
 		return (
 			<div className="fieldsArea" onClick={(e)=>this.clicked(e)}>
 				<div></div>
