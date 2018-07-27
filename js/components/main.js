@@ -4,15 +4,6 @@ import { Board } from './board'
 import { MsgBar } from './msgBar'
 import { PlayersArea } from './players'
 
-import { connect } from 'react-redux'
-
-import { fetchUser } from '../actions/userActions'
-
-@connect((store) => {
-	return {
-		user: store.user.user,
-	}
-})
 export class Chinczyk extends React.Component {
 	constructor() {
 		super();
@@ -53,10 +44,6 @@ export class Chinczyk extends React.Component {
 		this.setState((prevState) => ({
 			players: [...prevState.players.slice(0,playerId), ...prevState.players.slice(playerId+1)]
 		}))
-	}
-
-	componentWillMount() {
-		this.props.dispatch(fetchUser());
 	}
 
 	render() {
