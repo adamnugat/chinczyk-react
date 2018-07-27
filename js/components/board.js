@@ -7,7 +7,8 @@ import { addPlayer } from '../actions/playerActions'
 @connect((store) => {
 	return {
 		players: store.player.players,
-		countPlayers: store.player.countPlayers
+		countPlayers: store.player.countPlayers,
+		game: store.game.game
 	}
 })
 
@@ -24,6 +25,10 @@ export class Board extends React.Component {
 			return false;
 		}
 
+		if (this.props.game.started) {
+			return false;
+		}
+		
 		this.clickedAddPlayer(target);
 	}
 

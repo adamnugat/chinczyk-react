@@ -7,7 +7,7 @@ export default function reducer(state={
 		case 'START_GAME': {
 			return { 
 				...state, 
-				game: action.data 
+				game: action.game 
 			}
 		}
 	}

@@ -1,9 +1,10 @@
-export function setMessage(message) {
+export function setMessage(message, color) {
 	return {
 		type: 'SET_MESSAGE',
 		message: {
 			text: message,
-			show: true
+			color: color || '#840400',
+			show: true,
 		}
 	}
 }

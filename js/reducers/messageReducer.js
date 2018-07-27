@@ -1,6 +1,7 @@
 export default function reducer(state={
 	message: {
 		text: '',
+		color: '#840400',
 		show: false
 	},
 }, action) {

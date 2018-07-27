@@ -17,7 +17,10 @@ export class MsgBar extends React.Component {
 
 	displayOrNot() {
 		if (this.props.message.show) {
-			return {display: 'block'};
+			return {
+				display: 'block',
+				backgroundColor: this.props.message.color
+			};
 		}
 
 		return {display: 'none'};
