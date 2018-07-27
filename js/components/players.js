@@ -16,6 +16,11 @@ export class PlayersArea extends React.Component {
 		super();
 	}
 
+	/**
+	 * klikniecie w jakis element na przestrzeni gracza
+	 * @param  {object} event - zdarzenie kliknięcia
+	 * @return {undefined}
+	 */
 	clicked(event) {
 		if (event.target.dataset.remove) {
 			const player = event.target.dataset.remove;
@@ -24,6 +29,11 @@ export class PlayersArea extends React.Component {
 		}
 	}
 
+	/**
+	 * klikniety konkretnie 'x' na przestrzeni gracza, powoduje to usunięcie gracza z kolejki przed rozpoczeciem gry
+	 * @param  {string} player - kolor gracza ktory zostanie usunięty z kolejki
+	 * @return {undefined}
+	 */
 	clickedRemovePlayer(player) {
 		const playerId = this.props.players.indexOf(player);
 
@@ -32,6 +42,11 @@ export class PlayersArea extends React.Component {
 		this.props.dispatch(removePlayer(newPlayers));
 	}
 
+	/**
+	 * renderowanie tablicy z graczami wybranymi do gry, wywietla przestrzeń graczy
+	 * @param  {array} players - tablica z graczami wybranymi do gry
+	 * @return {string} - kod html z przestrzeniami graczy
+	 */
 	renderPlayers(players) {
 	    return players.map((player, i) => {
 	        return (

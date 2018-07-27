@@ -17,6 +17,11 @@ export class Board extends React.Component {
 		super();
 	}
 
+	/**
+	 * klikniecie w element na planszy
+	 * @param  {object} event - zdarzenie klikniecia
+	 * @return {undefined}
+	 */
 	clicked(event) {
 		const playersFields = ['blue', 'red', 'green', 'yellow'],
 			target = event.target.dataset.color;
@@ -28,10 +33,16 @@ export class Board extends React.Component {
 		if (this.props.game.started) {
 			return false;
 		}
-		
+
 		this.clickedAddPlayer(target);
 	}
 
+	/**
+	 * klikniecie konkretnie na pole startowe gracza co oznacza ze:
+	 * wybranie gracza do gry
+	 * @param  {string} player - kolor kliknietego gracza
+	 * @return {undefined}
+	 */
 	clickedAddPlayer(player) {
 		if (this.props.players.indexOf(player) > -1) {
 			return false;

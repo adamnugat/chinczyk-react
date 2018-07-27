@@ -15,6 +15,10 @@ export class MsgBar extends React.Component {
 		super();
 	}
 
+	/**
+	 * wyswietla komunikat bledu jesli zmieni sie stan obiektu message w store
+	 * @return {object} style wyswietlajace komunikat bledu w odpowiednim kolorze
+	 */
 	displayOrNot() {
 		if (this.props.message.show) {
 			return {

@@ -18,6 +18,12 @@ export class StartBtn extends React.Component {
 		super();
 	}
 
+	/**
+	 * obsługa kliknięcia w przycisk rozpoczęcia gry
+	 * po rozpoczęciu gry przycisk pełni funkcję przejscia do następnego gracza
+	 * @param  {event}
+	 * @return {undefined}
+	 */
 	clicked(event) {
 		if (this.props.game.started) {
 			this.props.dispatch(setMessage('gra już została rozpoczęta!', 'green'));
