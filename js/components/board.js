@@ -1,4 +1,5 @@
 import React from 'react';
+import { Dice } from './dice'
 
 import { connect } from 'react-redux'
 
@@ -118,9 +119,9 @@ export class Board extends React.Component {
 				<div className="field" home="red" home-number="2"></div>
 				<div className="field" home="red" home-number="3"></div>
 				<div className="field" home="red" home-number="4"></div>
-				<div className="dice">
-					<div className="result"></div>
-				</div>
+
+				<Dice />
+
 				<div className="field" home="green" home-number="4"></div>
 				<div className="field" home="green" home-number="3"></div>
 				<div className="field" home="green" home-number="2"></div>

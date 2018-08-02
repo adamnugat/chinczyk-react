@@ -7,5 +7,5 @@ import player from './playerReducer'
 export default combineReducers({
 	game,
 	message,
-	player
+	player,
 })

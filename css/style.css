@@ -130,7 +130,7 @@ body {
   -moz-transition: all 1000ms ease;
   -webkit-transition: all 1000ms ease;
   transition: all 1000ms ease;
-  background-color: #79838c;
+  background-color: #585858;
   height: 100%;
   overflow: hidden;
 }
@@ -241,22 +241,22 @@ body.win {
   height: 100%;
   width: 100%;
 }
-.fieldsArea > div.dice .result[dice-result="1"] {
+.fieldsArea > div.dice .result[data-result="1"] {
   background-image: url(../images/dice/dice1.png);
 }
-.fieldsArea > div.dice .result[dice-result="2"] {
+.fieldsArea > div.dice .result[data-result="2"] {
   background-image: url(../images/dice/dice2.png);
 }
-.fieldsArea > div.dice .result[dice-result="3"] {
+.fieldsArea > div.dice .result[data-result="3"] {
   background-image: url(../images/dice/dice3.png);
 }
-.fieldsArea > div.dice .result[dice-result="4"] {
+.fieldsArea > div.dice .result[data-result="4"] {
   background-image: url(../images/dice/dice4.png);
 }
-.fieldsArea > div.dice .result[dice-result="5"] {
+.fieldsArea > div.dice .result[data-result="5"] {
   background-image: url(../images/dice/dice5.png);
 }
-.fieldsArea > div.dice .result[dice-result="6"] {
+.fieldsArea > div.dice .result[data-result="6"] {
   background-image: url(../images/dice/dice6.png);
 }
 .figuresContainer {
@@ -337,35 +337,35 @@ body.win {
 .playerFigures[order="4"]:before {
   content: '4';
 }
-.playerFigures.red.scale {
+.playerFigures.red.active {
   background-color: #ff5e5e;
   border-bottom: 10px solid #dd0000;
 }
 .playerFigures.red .figure {
   background-image: url(../images/figure_red.png);
 }
-.playerFigures.blue.scale {
+.playerFigures.blue.active {
   background-color: #5c5cff;
   border-bottom: 10px solid #0000db;
 }
 .playerFigures.blue .figure {
   background-image: url(../images/figure_blue.png);
 }
-.playerFigures.green.scale {
+.playerFigures.green.active {
   background-color: #02e202;
   border-bottom: 10px solid #016401;
 }
 .playerFigures.green .figure {
   background-image: url(../images/figure_green.png);
 }
-.playerFigures.yellow.scale {
+.playerFigures.yellow.active {
   background-color: #ffff5c;
   border-bottom: 10px solid #dbdb00;
 }
 .playerFigures.yellow .figure {
   background-image: url(../images/figure_yellow.png);
 }
-.playerFigures.scale {
+.playerFigures.active {
   -moz-transition: all 300ms ease;
   -webkit-transition: all 300ms ease;
   transition: all 300ms ease;
@@ -461,10 +461,11 @@ body.win {
   transition: all 300ms ease;
   bottom: 0;
   color: #ffffff;
-  display: none;
+  display: block;
   font-size: 14px;
   letter-spacing: 1.5px;
   line-height: 40px;
+  max-height: 0;
   overflow: hidden;
   position: fixed;
   right: 0;
@@ -476,7 +477,4 @@ body.win {
   clear: both;
   content: '';
   display: table;
-}
-.infoMsg.show {
-  display: block;
 }

@@ -1,6 +1,7 @@
 export default function reducer(state={
 	players: [],
 	countPlayers: 0,
+	activePlayer: '',
 }, action) {
 	switch (action.type) {
 		case 'ADD_PLAYER': {
@@ -15,6 +16,12 @@ export default function reducer(state={
 				...state, 
 				players: action.players,
 				countPlayers: --state.countPlayers				
+			}
+		}
+		case 'SELECT_FIRST_PLAYER': {
+			return { 
+				...state, 
+				activePlayer: action.activePlayer,
 			}
 		}
 	}

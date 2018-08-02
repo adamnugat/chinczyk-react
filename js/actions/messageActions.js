@@ -8,3 +8,13 @@ export function setMessage(message, color) {
 		}
 	}
 }
+
+export function destroyMessage() {
+	return {
+		type: 'DESTROY_MESSAGE',
+		message: {
+			text: '',
+			show: false,
+		}
+	}
+}

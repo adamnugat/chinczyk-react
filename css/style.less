@@ -1,4 +1,4 @@
-@baseBackground: #79838c;
+@baseBackground: #585858;
 @fieldSize: 50px;
 @playerFigureSize : 30px;
 
@@ -108,7 +108,6 @@ body {
 	}
 }
 
-
 .fieldsArea {
 	height: ~"calc((@{fieldSize} + 3px) * 11)";
 	margin: 120px auto 0 auto;
@@ -210,27 +209,27 @@ body {
 				height: 100%;
 				width: 100%;
 
-				&[dice-result="1"]{
+				&[data-result="1"]{
 					background-image: url(../images/dice/dice1.png);
 				}
 
-				&[dice-result="2"]{
+				&[data-result="2"]{
 					background-image: url(../images/dice/dice2.png);
 				}
 
-				&[dice-result="3"]{
+				&[data-result="3"]{
 					background-image: url(../images/dice/dice3.png);
 				}
 
-				&[dice-result="4"]{
+				&[data-result="4"]{
 					background-image: url(../images/dice/dice4.png);
 				}
 
-				&[dice-result="5"]{
+				&[data-result="5"]{
 					background-image: url(../images/dice/dice5.png);
 				}
 
-				&[dice-result="6"]{
+				&[data-result="6"]{
 					background-image: url(../images/dice/dice6.png);
 				}
 			}
@@ -321,7 +320,7 @@ body {
 	}
 
 	&.red {
-		&.scale {
+		&.active {
 			background-color: lighten(#dd0000, 25%);
 			border-bottom: 10px solid #dd0000;
 		}
@@ -331,7 +330,7 @@ body {
 		}
 	}
 	&.blue {
-		&.scale {
+		&.active {
 			background-color: lighten(#0000db, 25%);
 			border-bottom: 10px solid #0000db;
 		}
@@ -342,7 +341,7 @@ body {
 	}
 
 	&.green {
-		&.scale {
+		&.active {
 			background-color: lighten(#016401, 25%);
 			border-bottom: 10px solid #016401;
 		}
@@ -353,7 +352,7 @@ body {
 	}
 
 	&.yellow {
-		&.scale {
+		&.active {
 			background-color: lighten(#dbdb00, 25%);
 			border-bottom: 10px solid #dbdb00;
 		}
@@ -363,7 +362,7 @@ body {
 		}
 	}
 
-	&.scale{
+	&.active{
 		.transition;
 	}
 
@@ -463,17 +462,14 @@ body {
 
 	bottom: 0;
 	color: #ffffff;
-	display: none;
+	display: block;
 	font-size: 14px;
 	letter-spacing: 1.5px;
 	line-height: 40px;
+	max-height: 0;
 	overflow: hidden;
 	position: fixed;
 	right: 0;
 	text-align: center;
 	width: 100%;
-
-	&.show{
-		display: block;
-	}
 }

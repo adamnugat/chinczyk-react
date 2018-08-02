@@ -22,12 +22,12 @@ export class MsgBar extends React.Component {
 	displayOrNot() {
 		if (this.props.message.show) {
 			return {
-				display: 'block',
+				maxHeight: '100px',
 				backgroundColor: this.props.message.color
 			};
 		}
 
-		return {display: 'none'};
+		return {maxHeight: '0px'};
 	}
 
 	render() {

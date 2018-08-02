@@ -7,7 +7,9 @@ import { removePlayer } from '../actions/playerActions'
 @connect((store) => {
 	return {
 		players: store.player.players,
-		countPlayers: store.player.countPlayers
+		countPlayers: store.player.countPlayers,
+		activePlayer: store.player.activePlayer,
+		gameStarted: store.game.game.started
 	}
 })
 
@@ -24,6 +26,10 @@ export class PlayersArea extends React.Component {
 	clicked(event) {
 		if (event.target.dataset.remove) {
 			const player = event.target.dataset.remove;
+
+			if (this.props.gameStarted) {
+				return false;
+			}
 
 			this.clickedRemovePlayer(player);
 		}
@@ -49,8 +55,14 @@ export class PlayersArea extends React.Component {
 	 */
 	renderPlayers(players) {
 	    return players.map((player, i) => {
+	    	let active = '';
+
+			if (this.props.activePlayer === player) {
+				active = 'active';
+			}
+
 	        return (
-				<div order={i + 1} className={'playerFigures ' + player} onClick={(e)=>this.clicked(e)}>
+				<div order={i + 1} className={'playerFigures ' + player + ' ' + active} onClick={(e)=>this.clicked(e)}>
 					<span className="close fa fa-times" data-remove={player}></span>
 
 					<div className="figure" player={player} figure="1"></div>

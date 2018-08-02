@@ -11,3 +11,15 @@ export function removePlayer(players) {
 		players: players
 	}
 }
+
+export function selectFirstPlayer() {
+	return (dispatch, getState) => {
+		const activeP = getState().player.players[0];
+
+		dispatch({
+			type: 'SELECT_FIRST_PLAYER',
+			activePlayer: activeP
+		})
+
+	}
+}
