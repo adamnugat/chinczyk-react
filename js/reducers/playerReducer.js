@@ -1,5 +1,6 @@
 export default function reducer(state={
 	players: [],
+	playersObj: [],
 	countPlayers: 0,
 	activePlayer: '',
 }, action) {
@@ -8,6 +9,7 @@ export default function reducer(state={
 			return { 
 				...state, 
 				players: action.players,
+				playersObj: action.playersObj,
 				countPlayers: ++state.countPlayers
 			}
 		}
@@ -15,6 +17,7 @@ export default function reducer(state={
 			return { 
 				...state, 
 				players: action.players,
+				playersObj: action.playersObj,
 				countPlayers: --state.countPlayers				
 			}
 		}

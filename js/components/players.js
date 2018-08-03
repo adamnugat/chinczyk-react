@@ -7,9 +7,11 @@ import { removePlayer } from '../actions/playerActions'
 @connect((store) => {
 	return {
 		players: store.player.players,
+		playersObj: store.player.playersObj,
 		countPlayers: store.player.countPlayers,
 		activePlayer: store.player.activePlayer,
-		gameStarted: store.game.game.started
+		gameStarted: store.game.game.started,
+		diceResult: store.game.dice.result,
 	}
 })
 
@@ -43,40 +45,54 @@ export class PlayersArea extends React.Component {
 	clickedRemovePlayer(player) {
 		const playerId = this.props.players.indexOf(player);
 
-		let newPlayers = [...this.props.players.slice(0,playerId), ...this.props.players.slice(playerId+1)];
+		const newPlayers = [...this.props.players.slice(0,playerId), ...this.props.players.slice(playerId+1)];
 
-		this.props.dispatch(removePlayer(newPlayers));
+		const newPlayersObj = [...this.props.playersObj.slice(0,playerId), ...this.props.playersObj.slice(playerId+1)];
+
+		this.props.dispatch(removePlayer(newPlayers, newPlayersObj));
+	}
+
+	/**
+	 * renderowanie pionków gracza w obrębie obszaru gracza
+	 * @param  {object} player obiekt poszczególnego gracza
+	 * @return {string} zwraca html
+	 */
+	renderFigures(player) {
+		const figuresArray = new Array(player.sleepingFigures).fill(0);
+
+	    return figuresArray.map((nothing, i) => {
+			return (<div className="figure" player={player.color} figure={i + 1}></div>);
+		});
 	}
 
 	/**
 	 * renderowanie tablicy z graczami wybranymi do gry, wywietla przestrzeń graczy
-	 * @param  {array} players - tablica z graczami wybranymi do gry
+	 * @param  {array} players - tablica z obiektami poszczegolnych graczy wybranych do gry
 	 * @return {string} - kod html z przestrzeniami graczy
 	 */
-	renderPlayers(players) {
-	    return players.map((player, i) => {
+	renderPlayers(playersObj) {
+	    return playersObj.map((player, i) => {
 	    	let active = '';
 
-			if (this.props.activePlayer === player) {
+			if (this.props.activePlayer === player.color) {
 				active = 'active';
 			}
 
 	        return (
-				<div order={i + 1} className={'playerFigures ' + player + ' ' + active} onClick={(e)=>this.clicked(e)}>
-					<span className="close fa fa-times" data-remove={player}></span>
+				<div order={i + 1} className={'playerFigures ' + player.color + ' ' + active} onClick={(e)=>this.clicked(e)}>
+					<span className="close fa fa-times" data-remove={player.color}></span>
 
-					<div className="figure" player={player} figure="1"></div>
-					<div className="figure" player={player} figure="2"></div>
-					<div className="figure" player={player} figure="3"></div>
-					<div className="figure" player={player} figure="4"></div>
+					{ this.renderFigures(player) }
 				</div>
 	        );
 	    });
 	}
 
 	render() {
+		console.log(this.props.playersObj);
+
 		return (
-			<div className="figuresContainer">{ this.renderPlayers(this.props.players) }</div>
+			<div className="figuresContainer">{ this.renderPlayers(this.props.playersObj) }</div>
 		)
 	}
 }

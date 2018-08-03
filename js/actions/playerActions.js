@@ -1,14 +1,16 @@
-export function addPlayer(players) {
+export function addPlayer(players, playersObj) {
 	return {
 		type: 'ADD_PLAYER',
-		players: players
+		players: players,
+		playersObj: playersObj,
 	}
 }
 
-export function removePlayer(players) {
+export function removePlayer(players, playersObj) {
 	return {
 		type: 'REMOVE_PLAYER',
-		players: players
+		players: players,
+		playersObj: playersObj,
 	}
 }
 
@@ -20,6 +22,5 @@ export function selectFirstPlayer() {
 			type: 'SELECT_FIRST_PLAYER',
 			activePlayer: activeP
 		})
-
 	}
 }

@@ -8,6 +8,7 @@ import { addPlayer } from '../actions/playerActions'
 @connect((store) => {
 	return {
 		players: store.player.players,
+		playersObj: store.player.playersObj,
 		countPlayers: store.player.countPlayers,
 		game: store.game.game
 	}
@@ -49,9 +50,11 @@ export class Board extends React.Component {
 			return false;
 		}
 
-		let newPlayers = [...this.props.players, player];
+		const newPlayers = [...this.props.players, player];
 
-		this.props.dispatch(addPlayer(newPlayers));
+		const newPlayersObj = [...this.props.playersObj, { color: player, sleepingFigures: 4 }];
+
+		this.props.dispatch(addPlayer(newPlayers, newPlayersObj));
 	}
 
 	render() {
