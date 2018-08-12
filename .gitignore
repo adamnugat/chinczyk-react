@@ -1,2 +1,4 @@
+/node_modules
 
-node_modules/.cache/uglifyjs-webpack-plugin/
+
+node_modules/@webassemblyjs/

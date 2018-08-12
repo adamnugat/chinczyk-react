@@ -26,7 +26,7 @@ export class Board extends React.Component {
 	 */
 	clicked(event) {
 		const playersFields = ['blue', 'red', 'green', 'yellow'],
-			target = event.target.dataset.color;
+			target = event.target.dataset.start;
 
 		if (playersFields.indexOf(target) === -1) {
 			return false;
@@ -68,7 +68,7 @@ export class Board extends React.Component {
 				<div></div>
 				<div className="field" field-number="9"></div>
 				<div className="field" field-number="10"></div>
-				<div className="field" field-number="11" data-color="blue"></div>
+				<div className="field" field-number="11" data-start="blue"><div className="figure"></div></div>
 				<div></div>
 				<div></div>
 				<div></div>
@@ -106,7 +106,7 @@ export class Board extends React.Component {
 				<div></div>
 				<div></div>
 				<div></div>
-				<div className="field" field-number="1" data-color="red"></div>
+				<div className="field" field-number="1" data-start="red"></div>
 				<div className="field" field-number="2"></div>
 				<div className="field" field-number="3"></div>
 				<div className="field" field-number="4"></div>
@@ -140,7 +140,7 @@ export class Board extends React.Component {
 				<div className="field" field-number="24"></div>
 				<div className="field" field-number="23"></div>
 				<div className="field" field-number="22"></div>
-				<div className="field" field-number="21" data-color="green"></div>
+				<div className="field" field-number="21" data-start="green"></div>
 				<div></div>
 				<div></div>
 				<div></div>
@@ -178,7 +178,7 @@ export class Board extends React.Component {
 				<div></div>
 				<div></div>
 				<div></div>
-				<div className="field" field-number="31" data-color="yellow"></div>
+				<div className="field" field-number="31" data-start="yellow"></div>
 				<div className="field" field-number="30"></div>
 				<div className="field" field-number="29"></div>
 				<div></div>

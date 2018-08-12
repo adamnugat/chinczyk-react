@@ -1,54 +1,48 @@
-import React from 'react';
+import React from "react";
 
-import { connect } from 'react-redux'
+import { connect } from "react-redux";
 
-import { rollDice } from '../actions/gameActions'
+import { rollDice } from "../actions/gameActions";
 
-@connect((store) => {
-	return {
-		showDice: store.game.dice.showDice,
-		activateDice: store.game.dice.activateDice,
-		result: store.game.dice.result,
-	}
-})
+@connect(store => ({
+  showDice: store.game.dice.showDice,
+  activateDice: store.game.dice.activateDice,
+  result: store.game.dice.result
+}))
 
 export class Dice extends React.Component {
-	constructor() {
-		super();
-	}
+  /**
+   * klikniecie w kosc
+   * @param  {object} event - zdarzenie klikniecia
+   * @return {undefined}
+   */
 
-	/**
-	 * klikniecie w kosc
-	 * @param  {object} event - zdarzenie klikniecia
-	 * @return {undefined}
-	 */
-	clicked(event) {
-		if (!this.props.activateDice) {
-			return false;
-		}
+  clicked (event) {
+    if (!this.props.activateDice) {
+      return false;
+    }
 
-		const result = Math.floor(Math.random() * 6) + 1;
+    const result = Math.floor(Math.random() * 6) + 1;
 
-		this.props.dispatch(rollDice(result));
-	}
+    this.props.dispatch(rollDice(result));
+  }
 
+  render () {
+    let show = "",
+      active = "";
 
-	render() {
-		let show = '',
-			active = '';
+    if (this.props.showDice) {
+      show = "show";
+    }
 
-		if (this.props.showDice) {
-			show = 'show';
-		}
+    if (this.props.activateDice) {
+      active = "animation";
+    }
 
-		if (this.props.activateDice) {
-			active = 'animation';
-		}
-
-		return (
-			<div className={'dice ' + show + ' ' + active} onClick={(e)=>this.clicked(e)}>
-				<div className="result" data-result={this.props.result}></div>
-			</div>
-		)
-	}
+    return (
+      <div className={`dice ${show} ${active}`} onClick={e => this.clicked(e)}>
+        <div className="result" data-result={this.props.result} />
+      </div>
+    );
+  }
 }

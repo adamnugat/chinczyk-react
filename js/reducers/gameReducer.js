@@ -7,7 +7,8 @@ export default function reducer(state={
 		showDice: false,
 		activateDice: false,
 		result: ''
-	}
+	},
+	updateFields: false
 }, action) {
 	switch (action.type) {
 		case 'START_GAME': {
@@ -36,6 +37,12 @@ export default function reducer(state={
 					activateDice: false,
 					result: action.result,
 				}
+			}
+		}
+		case 'RENDER_FIELDS': {
+			return { 
+				...state, 
+				updateFields: action.updateFields
 			}
 		}
 	}

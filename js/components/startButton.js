@@ -58,7 +58,7 @@ export class StartBtn extends React.Component {
 					this.props.dispatch(destroyMessage());
 
 					resolve (true);
-				}, 2000);
+				}, 1000);
 			}) 
 		})
 		.then((response) => { 
@@ -75,8 +75,6 @@ export class StartBtn extends React.Component {
 
 
 	render() {
-		console.log(this.props);
-
 		if (this.props.game.hideStartButton) {
 			return null;
 		}

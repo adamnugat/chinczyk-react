@@ -1,0 +1,16 @@
+{
+  "extends": ["airbnb-standard"],
+  "parser": "babel-eslint",
+  "globals": {
+    "jQuery": true,
+    "$": true,
+  },
+  "env": {
+    "browser": true,
+    "node": true
+  },
+  "rules": {
+    "quotes": [1, "double"],
+    "prefer-destructuring": ["error", {"object": false, "array": false}],
+  }
+}

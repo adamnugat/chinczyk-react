@@ -169,19 +169,19 @@ body.win {
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#cecece', endColorstr='#ffffff', GradientType=1);
   /* IE6-9 fallback on horizontal gradient */
 }
-.fieldsArea > div.field[data-color="red"],
+.fieldsArea > div.field[data-start="red"],
 .fieldsArea > div.field[home="red"] {
   background: red;
 }
-.fieldsArea > div.field[data-color="blue"],
+.fieldsArea > div.field[data-start="blue"],
 .fieldsArea > div.field[home="blue"] {
   background: blue;
 }
-.fieldsArea > div.field[data-color="green"],
+.fieldsArea > div.field[data-start="green"],
 .fieldsArea > div.field[home="green"] {
   background: green;
 }
-.fieldsArea > div.field[data-color="yellow"],
+.fieldsArea > div.field[data-start="yellow"],
 .fieldsArea > div.field[home="yellow"] {
   background: yellow;
 }
@@ -399,16 +399,16 @@ body.win {
   width: 40px;
   z-index: 1;
 }
-.field .figure[player="red"] {
+.field .figure[data-player="red"] {
   background-image: url(../images/figure_red.png);
 }
-.field .figure[player="blue"] {
+.field .figure[data-player="blue"] {
   background-image: url(../images/figure_blue.png);
 }
-.field .figure[player="green"] {
+.field .figure[data-player="green"] {
   background-image: url(../images/figure_green.png);
 }
-.field .figure[player="yellow"] {
+.field .figure[data-player="yellow"] {
   background-image: url(../images/figure_yellow.png);
 }
 .field .figure.animation {

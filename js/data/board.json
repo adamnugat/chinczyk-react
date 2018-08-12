@@ -1,0 +1,442 @@
+{
+    "1": {
+        "isField": false,
+    },
+    "2": {
+        "isField": false,
+    },
+    "3": {
+        "isField": false,
+    },
+    "4": {
+        "isField": false,
+    },
+    "5": {
+        "isField": true,
+        "fieldNumber": 9
+    },
+    "6": {
+        "isField": true,
+        "fieldNumber": 10
+    },
+    "7": {
+        "isField": true,
+        "fieldNumber": 11,
+        "startField": "blue"
+    },
+    "8": {
+        "isField": false,
+    },
+    "9": {
+        "isField": false,
+    },
+    "10": {
+        "isField": false,
+    },
+    "11": {
+        "isField": false,
+    },
+    "12": {
+        "isField": false,
+    },
+    "13": {
+        "isField": false,
+    },
+    "14": {
+        "isField": false,
+    },
+    "15": {
+        "isField": false,
+    },
+    "16": {
+        "isField": true,
+        "fieldNumber": 8
+    },
+    "17": {
+        "isField": true,
+        "homeColor": "blue",
+        "homeNumber": 1
+    },
+    "18": {
+        "isField": true,
+        "fieldNumber": 12
+    },
+    "19": {
+        "isField": false,
+    },
+    "20": {
+        "isField": false,
+    },
+    "21": {
+        "isField": false,
+    },
+    "22": {
+        "isField": false,
+    },
+    "23": {
+        "isField": false,
+    },
+    "24": {
+        "isField": false,
+    },
+    "25": {
+        "isField": false,
+    },
+    "26": {
+        "isField": false,
+    },
+    "27": {
+        "isField": true,
+        "fieldNumber": 7
+    },
+    "28": {
+        "isField": true,
+        "homeColor": "blue",
+        "homeNumber": 2
+    },
+    "29": {
+        "isField": true,
+        "fieldNumber": 13
+    },
+    "30": {
+        "isField": false,
+    },
+    "31": {
+        "isField": false,
+    },
+    "32": {
+        "isField": false,
+    },
+    "33": {
+        "isField": false,
+    },
+    "34": {
+        "isField": false,
+    },
+    "35": {
+        "isField": false,
+    },
+    "36": {
+        "isField": false,
+    },
+    "37": {
+        "isField": false,
+    },
+    "38": {
+        "isField": true,
+        "fieldNumber": 6
+    },
+    "39": {
+        "isField": true,
+        "homeColor": "blue",
+        "homeNumber": 3
+    },
+    "40": {
+        "isField": true,
+        "fieldNumber": 14
+    },
+    "41": {
+        "isField": false,
+    },
+    "42": {
+        "isField": false,
+    },
+    "43": {
+        "isField": false,
+    },
+    "44": {
+        "isField": false,
+    },
+    "45": {
+        "isField": true,
+        "fieldNumber": 1,
+        "startField": "red"
+    },
+    "46": {
+        "isField": true,
+        "fieldNumber": 2
+    },
+    "47": {
+        "isField": true,
+        "fieldNumber": 3
+    },
+    "48": {
+        "isField": true,
+        "fieldNumber": 4
+    },
+    "49": {
+        "isField": true,
+        "fieldNumber": 5
+    },
+    "50": {
+        "isField": true,
+        "homeColor": "blue",
+        "homeNumber": 4
+    },
+    "51": {
+        "isField": true,
+        "fieldNumber": 15
+    },
+    "52": {
+        "isField": true,
+        "fieldNumber": 16
+    },
+    "53": {
+        "isField": true,
+        "fieldNumber": 17
+    },
+    "54": {
+        "isField": true,
+        "fieldNumber": 18
+    },
+    "55": {
+        "isField": true,
+        "fieldNumber": 19
+    },
+    "56": {
+        "isField": true,
+        "fieldNumber": 40
+    },
+    "57": {
+        "isField": true,
+        "homeColor": "red",
+        "homeNumber": 1
+    },
+    "58": {
+        "isField": true,
+        "homeColor": "red",
+        "homeNumber": 2
+    },
+    "59": {
+        "isField": true,
+        "homeColor": "red",
+        "homeNumber": 3
+    },
+    "60": {
+        "isField": true,
+        "homeColor": "red",
+        "homeNumber": 4
+    },
+    "61": {
+        "isField": false,
+        "isDice": true
+    },
+    "62": {
+        "isField": true,
+        "homeColor": "green",
+        "homeNumber": 4
+    },
+    "63": {
+        "isField": true,
+        "homeColor": "green",
+        "homeNumber": 3
+    },
+    "64": {
+        "isField": true,
+        "homeColor": "green",
+        "homeNumber": 2
+    },
+    "65": {
+        "isField": true,
+        "homeColor": "green",
+        "homeNumber": 1
+    },
+    "66": {
+        "isField": true,
+        "fieldNumber": 20
+    },
+    "67": {
+        "isField": true,
+        "fieldNumber": 39
+    },
+    "68": {
+        "isField": true,
+        "fieldNumber": 38
+    },
+    "69": {
+        "isField": true,
+        "fieldNumber": 37
+    },
+    "70": {
+        "isField": true,
+        "fieldNumber": 36
+    },
+    "71": {
+        "isField": true,
+        "fieldNumber": 35
+    },
+    "72": {
+        "isField": true,
+        "homeColor": "yellow",
+        "homeNumber": 4
+    },
+    "73": {
+        "isField": true,
+        "fieldNumber": 25
+    },
+    "74": {
+        "isField": true,
+        "fieldNumber": 24
+    },
+    "75": {
+        "isField": true,
+        "fieldNumber": 23
+    },
+    "76": {
+        "isField": true,
+        "fieldNumber": 22
+    },
+    "77": {
+        "isField": true,
+        "fieldNumber": 21,
+        "startField": "green"
+    },
+    "78": {
+        "isField": false,
+    },
+    "79": {
+        "isField": false,
+    },
+    "80": {
+        "isField": false,
+    },
+    "81": {
+        "isField": false,
+    },
+    "82": {
+        "isField": true,
+        "fieldNumber": 34
+    },
+    "83": {
+        "isField": true,
+        "homeColor": "yellow",
+        "homeNumber": 3
+    },
+    "84": {
+        "isField": true,
+        "fieldNumber": 26
+    },
+    "85": {
+        "isField": false,
+    },
+    "86": {
+        "isField": false,
+    },
+    "87": {
+        "isField": false,
+    },
+    "88": {
+        "isField": false,
+    },
+    "89": {
+        "isField": false,
+    },
+    "90": {
+        "isField": false,
+    },
+    "91": {
+        "isField": false,
+    },
+    "92": {
+        "isField": false,
+    },
+    "93": {
+        "isField": true,
+        "fieldNumber": 33
+    },
+    "94": {
+        "isField": true,
+        "homeColor": "yellow",
+        "homeNumber": 2
+    },
+    "95": {
+        "isField": true,
+        "fieldNumber": 27
+    },
+    "96": {
+        "isField": false,
+    },
+    "97": {
+        "isField": false,
+    },
+    "98": {
+        "isField": false,
+    },
+    "99": {
+        "isField": false,
+    },
+    "100": {
+        "isField": false,
+    },
+    "101": {
+        "isField": false,
+    },
+    "102": {
+        "isField": false,
+    },
+    "103": {
+        "isField": false,
+    },
+    "104": {
+        "isField": true,
+        "fieldNumber": 32
+    },
+    "105": {
+        "isField": true,
+        "homeColor": "yellow",
+        "homeNumber": 1
+    },
+    "106": {
+        "isField": true,
+        "fieldNumber": 28
+    },
+    "107": {
+        "isField": false,
+    },
+    "108": {
+        "isField": false,
+    },
+    "109": {
+        "isField": false,
+    },
+    "110": {
+        "isField": false,
+    },
+    "111": {
+        "isField": false,
+    },
+    "112": {
+        "isField": false,
+    },
+    "113": {
+        "isField": false,
+    },
+    "114": {
+        "isField": false,
+    },
+    "115": {
+        "isField": true,
+        "fieldNumber": 31,
+        "startField": "yellow"
+    },
+    "116": {
+        "isField": true,
+        "fieldNumber": 30
+    },
+    "117": {
+        "isField": true,
+        "fieldNumber": 29
+    },
+    "118": {
+        "isField": false,
+    },
+    "119": {
+        "isField": false,
+    },
+    "120": {
+        "isField": false,
+    },
+    "120": {
+        "isField": false,
+    }
+}

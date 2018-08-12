@@ -131,22 +131,22 @@ body {
 			background: radial-gradient(ellipse at center,  rgba(206,206,206,1) 0%,rgba(255,255,255,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
 			filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#cecece', endColorstr='#ffffff',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
 
-			&[data-color="red"],
+			&[data-start="red"],
 			&[home="red"]{
 				background: red;
 			}
 
-			&[data-color="blue"],
+			&[data-start="blue"],
 			&[home="blue"]{
 				background: blue;
 			}
 
-			&[data-color="green"],
+			&[data-start="green"],
 			&[home="green"]{
 				background: green;
 			}
 
-			&[data-color="yellow"],
+			&[data-start="yellow"],
 			&[home="yellow"]{
 				background: yellow;
 			}
@@ -392,19 +392,19 @@ body {
 		width: 40px;
 		z-index: 1;
 
-		&[player="red"] {
+		&[data-player="red"] {
 			background-image: url(../images/figure_red.png);
 		}
 
-		&[player="blue"] {
+		&[data-player="blue"] {
 			background-image: url(../images/figure_blue.png);
 		}
 
-		&[player="green"] {
+		&[data-player="green"] {
 			background-image: url(../images/figure_green.png);
 		}
 
-		&[player="yellow"] {
+		&[data-player="yellow"] {
 			background-image: url(../images/figure_yellow.png);
 		}
 
