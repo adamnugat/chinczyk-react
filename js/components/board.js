@@ -58,8 +58,6 @@ export class Board extends React.Component {
 	}
 
 	render() {
-		console.log(this.props);
-
 		return (
 			<div className="fieldsArea" onClick={(e)=>this.clicked(e)}>
 				<div></div>

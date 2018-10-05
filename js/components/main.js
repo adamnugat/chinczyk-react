@@ -1,35 +1,41 @@
-import React from 'react'
-import { StartBtn } from './startButton'
-import { Board } from './board'
-import { MsgBar } from './msgBar'
-import { PlayersArea } from './players'
+import React from 'react';
+import { connect } from 'react-redux';
 
-export class Chinczyk extends React.Component {
-	constructor() {
-		super();
+import StartBtn from './startButton';
+import { Board } from './board';
+import { MsgBar } from './msgBar';
+import { PlayersArea } from './players';
 
-		this.state = {
-			players: []
-		};
+export default
+@connect(store => ({
+  message: store.message.message,
+}))
+class Chinczyk extends React.Component {
+  constructor() {
+    super();
 
-		this.settings = {
-			playersCount: 0
-		}
-	}
+    this.state = {
+      players: []
+    };
 
-	render() {
-		return (
-			<div>
-				<div className="infoArea">
-					<StartBtn settings={this.settings} />
+    this.settings = {
+      playersCount: 0
+    }
+  }
 
-					<PlayersArea />
-				</div>
+  render() {
+    return (
+      <div>
+        <div className="infoArea">
+          <StartBtn settings={this.settings} />
 
-				<Board />
+          <PlayersArea />
+        </div>
 
-				<MsgBar {...this.props.message} /> {/* tożsame : <MsgBar {error={this.state.msg.error} show={this.state.msg.show}} /> */}
-			</div>
-		)
-	}
+        <Board />
+
+        <MsgBar {...this.props.message} /> {/* tożsame : <MsgBar {error={this.state.msg.error} show={this.state.msg.show}} /> */}
+      </div>
+    )
+  }
 }

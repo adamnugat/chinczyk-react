@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "it": "webpack-dev-server --hot"
+    "it": "webpack-dev-server --hot",
+    "watch": "webpack-dev-server --watch --progress --hide-modules"
   },
   "author": "adam",
   "license": "ISC",

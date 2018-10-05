@@ -89,8 +89,7 @@ export class PlayersArea extends React.Component {
 	}
 
 	render() {
-		console.log(this.props.playersObj);
-
+		console.log('qqq');
 		return (
 			<div className="figuresContainer">{ this.renderPlayers(this.props.playersObj) }</div>
 		)

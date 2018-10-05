@@ -10,7 +10,17 @@
     "node": true
   },
   "rules": {
-    "quotes": [1, "double"],
+    "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }],
+    "space-before-function-paren": ["error", "never"],
+    "quotes": [1, "single"],
     "prefer-destructuring": ["error", {"object": false, "array": false}],
+    "comma-dangle": ["error", {
+      "arrays": "never",
+      "objects": "always",
+      "imports": "never",
+      "exports": "never",
+      "functions": "ignore"
+    }],
+    'react/destructuring-assignment': 'off',
   }
 }
