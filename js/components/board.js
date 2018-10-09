@@ -1,7 +1,9 @@
 import React from 'react';
-import { connect } from 'react-redux';
-import { Dice } from './dice';
+import PropTypes from 'prop-types';
 
+import { connect } from 'react-redux';
+
+import Dice from './dice';
 import { addPlayer } from '../actions/playerActions';
 
 export default
@@ -12,6 +14,24 @@ export default
   game: store.game.game,
 }))
 class Board extends React.Component {
+  static propTypes = {
+    dispatch: PropTypes.func,
+    players: PropTypes.shape(),
+    playersObj: PropTypes.shape(),
+    countPlayers: PropTypes.number,
+    game: PropTypes.shape({
+      started: PropTypes.bool,
+    }),
+  };
+
+  static defaultProps = {
+    dispatch: () => {},
+    players: {},
+    playersObj: {},
+    countPlayers: 0,
+    game: {},
+  };
+
   /**
      * klikniecie w element na planszy
      * @param  {object} event - zdarzenie klikniecia
@@ -31,6 +51,7 @@ class Board extends React.Component {
     }
 
     this.clickedAddPlayer(target);
+    return true;
   }
 
   /**
@@ -49,11 +70,16 @@ class Board extends React.Component {
     const newPlayersObj = [...this.props.playersObj, { color: player, sleepingFigures: 4, }];
 
     this.props.dispatch(addPlayer(newPlayers, newPlayersObj));
+
+    return true;
   }
 
   render() {
     return (
-      <div className="fieldsArea" onClick={e => this.clicked(e)}>
+      <div
+        className="fieldsArea"
+        onClick={e => this.clicked(e)}
+      >
         <div />
         <div />
         <div />
