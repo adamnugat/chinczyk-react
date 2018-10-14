@@ -259,11 +259,37 @@ body.win {
 .fieldsArea > div.dice .result[data-result="6"] {
   background-image: url(../images/dice/dice6.png);
 }
+.playersToChose {
+  display: inline-block;
+  height: 70px;
+}
+.playersToChose .singlePlayer {
+  display: inline-block;
+  background-color: #000000;
+  margin-left: 5px;
+  border-radius: 50%;
+  vertical-align: middle;
+  height: 40px;
+  width: 40px;
+}
+.playersToChose .singlePlayer.singlePlayer--red {
+  background-color: red;
+}
+.playersToChose .singlePlayer.singlePlayer--blue {
+  background-color: blue;
+}
+.playersToChose .singlePlayer.singlePlayer--green {
+  background-color: green;
+}
+.playersToChose .singlePlayer.singlePlayer--yellow {
+  background-color: yellow;
+}
 .figuresContainer {
-  left: 130px;
+  right: 0;
   position: absolute;
   top: 0;
-  width: calc(100% - 200px);
+  display: flex;
+  justify-content: flex-end;
 }
 .figuresContainer .close {
   border-radius: 20px;
@@ -451,9 +477,8 @@ body.win {
   cursor: pointer;
   display: inline-block;
   line-height: 70px;
-  padding: 0 10px;
+  padding: 0 20px;
   text-align: center;
-  width: 130px;
 }
 .infoMsg {
   -moz-transition: all 300ms ease;

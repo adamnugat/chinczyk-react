@@ -2,40 +2,58 @@ import React from 'react';
 import { connect } from 'react-redux';
 
 import StartBtn from './startButton';
-import { Board } from './board';
-import { MsgBar } from './msgBar';
-import { PlayersArea } from './players';
+import PlayersBeforeStart from './playersBeforeStart';
+import Board from './board';
+import MsgBar from './msgBar';
+import PlayersArea from './players';
+
+import { initData } from '../actions/gameActions';
 
 export default
 @connect(store => ({
   message: store.message.message,
+  initDataDone: store.game.initDataDone,
 }))
 class Chinczyk extends React.Component {
   constructor() {
     super();
 
     this.state = {
-      players: []
+      players: [],
     };
 
     this.settings = {
-      playersCount: 0
-    }
+      playersCount: 0,
+    };
+  }
+
+  componentDidMount() {
+    this.props.dispatch(initData());
   }
 
   render() {
+    if (!this.props.initDataDone) {
+      return (
+        <div>
+          Uruchamianie...
+        </div>
+      );
+    }
+
     return (
-      <div>
+      <React.Fragment>
         <div className="infoArea">
           <StartBtn settings={this.settings} />
+
+          <PlayersBeforeStart />
 
           <PlayersArea />
         </div>
 
         <Board />
 
-        <MsgBar {...this.props.message} /> {/* tożsame : <MsgBar {error={this.state.msg.error} show={this.state.msg.show}} /> */}
-      </div>
-    )
+        <MsgBar {...this.props.message} />
+      </React.Fragment>
+    );
   }
 }

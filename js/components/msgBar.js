@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 import { connect } from 'react-redux';
 
@@ -7,10 +8,24 @@ export default
   message: store.message.message,
 }))
 class MsgBar extends React.Component {
+  static propTypes = {
+    message: PropTypes.shape({
+      show: PropTypes.bool,
+      color: PropTypes.string,
+      text: PropTypes.string,
+    }),
+    classNames: PropTypes.string,
+  };
+
+  static defaultProps = {
+    message: {},
+    classNames: 'infoMsg',
+  };
+
   /**
-	* wyswietla komunikat bledu jesli zmieni sie stan obiektu message w store
-	* @return {object} style wyswietlajace komunikat bledu w odpowiednim kolorze
-	*/
+  * wyswietla komunikat bledu jesli zmieni sie stan obiektu message w store
+  * @return {object} style wyswietlajace komunikat bledu w odpowiednim kolorze
+  */
   displayOrNot() {
     if (this.props.message.show) {
       return {
@@ -30,7 +45,3 @@ class MsgBar extends React.Component {
     );
   }
 }
-
-MsgBar.defaultProps = {
-  classNames: 'infoMsg',
-};

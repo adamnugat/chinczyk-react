@@ -1,4 +1,6 @@
 export default function reducer(state = {
+  boardFields: {},
+  initDataDone: false,
   game: {
     started: false,
     hideStartButton: false,
@@ -11,6 +13,13 @@ export default function reducer(state = {
   updateFields: false,
 }, action) {
   switch (action.type) {
+    case 'INIT_DATA': {
+      return {
+        ...state,
+        boardFields: action.boardFields,
+        initDataDone: true,
+      };
+    }
     case 'START_GAME': {
       return {
         ...state,
@@ -45,6 +54,10 @@ export default function reducer(state = {
         updateFields: action.updateFields,
       };
     }
+    default:
+      return {
+        ...state,
+      };
   }
 
   return state;

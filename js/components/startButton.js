@@ -51,34 +51,28 @@ class StartBtn extends React.Component {
    * @return {undefined}
    */
   startGame() {
-    const startPromise = () => {
-      return new Promise((resolve, reject) => {
-        this.props.dispatch(startGame());
-        this.props.dispatch(setMessage('gra została rozpoczęta', 'green'));
+    const startPromise = () => new Promise((resolve, reject) => {
+      this.props.dispatch(startGame());
+      this.props.dispatch(setMessage('gra została rozpoczęta', 'green'));
 
-        resolve(true);
-      });
-    };
+      resolve(true);
+    });
 
     startPromise()
-      .then((response) => {
-        return new Promise((resolve, reject) => {
-          setTimeout(() => {
-            this.props.dispatch(destroyMessage());
-
-            resolve(true);
-          }, 1000);
-        });
-      })
-      .then((response) => {
-        return new Promise((resolve, reject) => {
-          this.props.dispatch(selectFirstPlayer());
-          this.props.dispatch(activateDice());
-          this.props.dispatch(setMessage(`kolej na gracza ${this.props.activePlayer}`, this.props.activePlayer));
+      .then(response => new Promise((resolve, reject) => {
+        setTimeout(() => {
+          this.props.dispatch(destroyMessage());
 
           resolve(true);
-        });
-      })
+        }, 1000);
+      }))
+      .then(response => new Promise((resolve, reject) => {
+        this.props.dispatch(selectFirstPlayer());
+        this.props.dispatch(activateDice());
+        this.props.dispatch(setMessage(`kolej na gracza ${this.props.activePlayer}`, this.props.activePlayer));
+
+        resolve(true);
+      }))
       .catch(error => console.log(error.message));
   }
 
@@ -92,7 +86,7 @@ class StartBtn extends React.Component {
         className="actionBtn btnStart"
         onClick={e => this.clicked(e)}
       >
-        START
+        WYBIERZ GRACZY
       </div>
     );
   }
