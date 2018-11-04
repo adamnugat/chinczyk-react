@@ -7,6 +7,7 @@ import { addPlayer } from '../actions/playerActions';
 @connect(store => ({
   players: store.player.players,
   playersObj: store.player.playersObj,
+  playersToChoose: store.player.playersToChoose,
 }))
 class PlayersBeforeStart extends React.Component {
   static propTypes = {
@@ -33,25 +34,21 @@ class PlayersBeforeStart extends React.Component {
     return true;
   }
 
+  renderPlayersToChose(playersToChoose) {
+    return playersToChoose.map((playerToChoose) => {
+      return (
+        <div
+          className={`singlePlayer singlePlayer--${playerToChoose}`}
+          onClick={() => this.addPlayerHandler(playerToChoose)}
+        />
+      );
+    })
+  }
+
   render() {
     return (
       <div className="playersToChose">
-        <div
-          className="singlePlayer singlePlayer--red"
-          onClick={() => this.addPlayerHandler('red')}
-        />
-        <div
-          className="singlePlayer singlePlayer--blue"
-          onClick={() => this.addPlayerHandler('blue')}
-        />
-        <div
-          className="singlePlayer singlePlayer--green"
-          onClick={() => this.addPlayerHandler('green')}
-        />
-        <div
-          className="singlePlayer singlePlayer--yellow"
-          onClick={() => this.addPlayerHandler('yellow')}
-        />
+        { this.renderPlayersToChose(this.props.playersToChoose) }
       </div>
     );
   }

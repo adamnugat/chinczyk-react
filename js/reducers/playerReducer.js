@@ -1,6 +1,7 @@
-export default function reducer(state={
+export default function reducer(state = {
 	players: [],
 	playersObj: [],
+	playersToChoose: ['red', 'blue', 'green', 'yellow'],
 	countPlayers: 0,
 	activePlayer: '',
 }, action) {
@@ -10,6 +11,7 @@ export default function reducer(state={
 				...state, 
 				players: action.players,
 				playersObj: action.playersObj,
+				playersToChoose: action.playersToChoose,
 				countPlayers: ++state.countPlayers
 			}
 		}
@@ -18,6 +20,7 @@ export default function reducer(state={
 				...state, 
 				players: action.players,
 				playersObj: action.playersObj,
+				playersToChoose: action.playersToChoose,
 				countPlayers: --state.countPlayers				
 			}
 		}
