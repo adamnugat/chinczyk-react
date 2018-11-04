@@ -59,14 +59,10 @@ class PlayersArea extends React.Component {
    * @param  {string} player - kolor gracza ktory zostanie usunięty z kolejki
    * @return {undefined}
    */
-  clickedRemovePlayer(player) {
-    const playerId = this.props.players.indexOf(player);
+  clickedRemovePlayer(color) {
+    this.props.dispatch(removePlayer(color));
 
-    const newPlayers = [...this.props.players.slice(0, playerId), ...this.props.players.slice(playerId + 1)];
-
-    const newPlayersObj = [...this.props.playersObj.slice(0, playerId), ...this.props.playersObj.slice(playerId + 1)];
-
-    this.props.dispatch(removePlayer(newPlayers, newPlayersObj));
+    return true;
   }
 
   /**

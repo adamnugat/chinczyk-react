@@ -28,15 +28,7 @@ class PlayersBeforeStart extends React.Component {
    * @return {undefined}
    */
   addPlayerHandler(color) {
-    if (this.props.players.indexOf(color) > -1) {
-      return false;
-    }
-
-    const newPlayers = [...this.props.players, color];
-
-    const newPlayersObj = [...this.props.playersObj, { color, sleepingFigures: 4, }];
-
-    this.props.dispatch(addPlayer(newPlayers, newPlayersObj));
+    this.props.dispatch(addPlayer(color));
 
     return true;
   }
